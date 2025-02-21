@@ -1,0 +1,33 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex 
+MDScreen:
+    name:"page"
+    MDLabel:
+        id:xx
+        text:"sqlite->mddatatable"
+        pos_hint:{"center_x":0.45,"center_y":.90}
+        font_size:"35sp"
+        halign:"center"
+    AnchorLayout:
+        id:datatable
+        pos_hint:{"center_x":.45,"center_y":.50}
+    MDRoundFlatButton:
+        text: "delete"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.25,"center_y":.15}
+        size:(100,190)
+        on_release:app.delete()
+    MDRoundFlatButton:
+        text: "update"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.45,"center_y":.15}
+        size:(100,190)
+        on_release:app.updatenewpage()
+    MDRoundFlatButton:
+        text: "add"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.65,"center_y":.15}
+        size:(100,190)
+        on_release:app.addnewpage()

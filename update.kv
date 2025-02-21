@@ -1,0 +1,51 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex 
+MDScreen:
+    name:"upd"
+    MDLabel:
+        id:xx
+        text:"update page"
+        pos_hint:{"center_x":0.45,"center_y":.90}
+        font_size:"35sp"
+        halign:"center"
+    MDFloatLayout:
+        pos_hint:{"center_x":.5,"center_y":.5}
+        size_hint:.35,.55
+        md_bg_color:get_color_from_hex("#A9A9A5")
+        MDTextFieldRound:
+            id:name
+            hint_text:"name"
+            icon_right:"account"
+            pos_hint:{"center_x":.45,"center_y":.65}
+            size_hint:.55,.10
+            font_size:18
+        MDTextFieldRound:
+            id:age
+            hint_text:"age"
+            icon_right:"account-check"
+            pos_hint:{"center_x":.45,"center_y":.50}
+            size_hint:.55,.10
+            font_size:18 
+        MDTextFieldRound:
+            id:city
+            hint_text:"city"
+            icon_right:"city"
+            pos_hint:{"center_x":.45,"center_y":.35}
+            size_hint:.55,.10
+            font_size:18
+
+    #buttons        
+    MDRoundFlatButton:
+        text: "back"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.35,"center_y":.15}
+        size:(100,190)
+        on_release:app.back()
+
+    MDRoundFlatButton:
+        text:"update"
+        text_color: 0, 1, 0, 1
+        size_hint:None,None
+        pos_hint:{"center_x":.55,"center_y":.15}
+        size:(100,190)
+        on_release:app.update(name.text,age.text,city.text)
